@@ -27,3 +27,11 @@ redis_settings = {
     "password": "",
     "db": 0
 }
+
+# MongoDB
+
+URI = "mongodb://127.0.0.1:27017/"
+DB_NAME = "test-data"
+DOC_NAME = "record"
+USERNAMR = "libai"
+PASSWORD = "123456"

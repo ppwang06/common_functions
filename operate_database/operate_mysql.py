@@ -26,6 +26,8 @@ class MainOperate:
         :return:
         """
         result = self.db.table("corpus").offset(2).limit(5).get()
+        # 对于多条件查询
+        db_data = self.db.table("corpus").where('type', 'all').where_between('age', [15, 25]).get()
         for num, data in enumerate(result):
             #  根据字段名获取每一条信息
             logging.info(data.get("url"))

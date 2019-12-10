@@ -1,2 +1,6 @@
-# common_functions
-Records for common knowledge points for individuals
+#### Python common knowledge summary
+
+---
+
+
+
