@@ -62,34 +62,24 @@ class OperateExcel(object):
 
     def save_more_sheet_excel(self):
         """
-        模拟在一个excel文件中存储多个sheet
+        模拟在一个excel文件中存储多个sheet，将多个sheet表格存入到一个文件中
+        参考链接:  https://blog.csdn.net/midion9/article/details/89000131
         :return:
         """
+        writer = pd.ExcelWriter("output.xlsx")
         for key, value in all_dict.items():
             data_list = list()
             for data in value:
                 data_list.append([key, data])
-            print(data_list)
-            self.save(data_list, key)
-
-    def save(self, data_list, name):
-        df = pd.DataFrame(data_list, index=False, columns=["名称", "链接"],)
-        writer = pd.ExcelWriter("output.xlsx")
-        df.to_excel(writer, sheet_name=name, index=False)
-    
-    @staticmethod    
-    def test_one():
-        df1 = pd.DataFrame([["a", "b"],["c","d"]], index=False,columns=False)
-        df2 = df1.copy()
-        with pd.ExcelWriter("output.xlsx") as writer:
-            df1.to_excel(writer, sheet_name="1")
-            df2.to_excel(writer, sheet_name="2")
+            df = pd.DataFrame(data_list)
+            df.to_excel(writer, sheet_name=key, header=["名称", "链接"], index=False)
+        writer.save()
 
 
 if __name__ == '__main__':
     oc = OperateCsv()
     oe = OperateExcel()
-    oe.test_one()
+    oe.save_more_sheet_excel()
 
 
 
