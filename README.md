@@ -3,7 +3,8 @@
 ---
 - extra_study: 模块  
     a. schedule     
-    b. APScheduler
+    b. APScheduler  
+    c. thread_process: 多进程，多线程, 装饰器，类的继承
 - operate_database: 数据库操作  
     a. mongo    
     b. mysql    
