@@ -24,4 +24,5 @@
 13. [os操作模块](./useful_func/os_func.py)
 14. [操作excel](./useful_func/pandas_operate_excel.py)
 15. [时间转换](./useful_func/time_change.py)
+16. [解析xml文件](./extra_study/parse_xml_data.py)
 
